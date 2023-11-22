@@ -69,10 +69,8 @@ jobs:
       - name: Copy artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: builds
-          path: |
-            buildSrc/build/
-            build/
+          name: build-${{ matrix.os }}
+          path: ./**/*.jar
   snapshot_tests:
     name: Test against snapshots
     needs: [prerequisites]
